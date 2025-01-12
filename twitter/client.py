@@ -445,7 +445,6 @@ class Client(BaseHTTPClient):
             'x-client-transaction-id': 'MZkZ3mpGzBRHnZWyNIOYM/hZOoArOUA/hEDWnMP1EkF+XBS/HiQDNu3AgNdsWGOrf24OBTJFp9sK2zQdt/RJKdhV4qSbMg',
         }
         response, response_json = await self.request("GET", url, headers=headers)
-        print(response_json)
         self.account.username = response_json["screen_name"]
 
     async def _request_user_by_username(self, username: str) -> User | None:
